@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        header {
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        header nav {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        header nav a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        header nav a:hover {
+            background-color: #BB86FC;
+            color: #121212;
+            transform: translateY(-2px);
+        }
+
+        header nav a.active {
+            background-color: rgba(187, 134, 252, 0.2);
+            border-bottom: 2px solid #BB86FC;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: #BB86FC;
+            text-shadow: 0 0 10px rgba(187, 134, 252, 0.7);
+            text-align: center;
+        }
+
+        section>p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        form>div {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #BB86FC;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            color: #fff;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #BB86FC;
+            box-shadow: 0 0 8px rgba(187, 134, 252, 0.5);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .radio-item,
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .radio-item:hover,
+        .checkbox-item:hover {
+            background-color: #333;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #BB86FC;
+        }
+
+        .radio-item label,
+        .checkbox-item label {
+            margin: 0;
+            cursor: pointer;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            flex: 1;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="submit"] {
+            background-color: #BB86FC;
+            color: #121212;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #9370DB;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        input[type="reset"] {
+            background-color: #333;
+            color: #fff;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active,
+        input[type="reset"]:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 15px 25px;
+            border-top-left-radius: 8px;
+            box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.3);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            header nav a {
+                text-align: center;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            footer {
+                left: 0;
+                right: 0;
+                text-align: center;
+                border-radius: 0;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-bottom: 100px;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" title="Voltar para a página inicial">Início</a></li>
+                <li><a href="contato.html" class="active" title="Você está aqui">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Entre em Contato</h1>
+            <p>Preencha o formulário abaixo e entrarei em contato o mais breve possível!</p>
+
+            <form action="confirmacao.html">
+                <div>
+                    <label for="fullName" title="Digite seu nome completo">Nome Completo *</label>
+                    <input id="fullName" name="fullName" type="text" placeholder="Ex: Maria Silva" required
+                        title="Campo obrigatório">
+                </div>
+
+                <div>
+                    <label for="email" title="Digite seu melhor e-mail">E-mail *</label>
+                    <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required
+                        title="Campo obrigatório">
+                </div>
+
+                <div>
+                    <label title="Selecione uma opção">Gênero</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input id="male" name="gender" type="radio" value="masculino">
+                            <label for="male">Masculino</label>
+                        </div>
+
+                        <div class="radio-item">
+                            <input id="female" name="gender" type="radio" value="feminino">
+                            <label for="female">Feminino</label>
+                        </div>
+
+                        <div class="radio-item">
+                            <input id="other" name="gender" type="radio" value="outro">
+                            <label for="other">Outro</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label title="Selecione um ou mais serviços">Quais serviços você quer contratar?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input id="landing" type="checkbox" name="servicos" value="landing">
+                            <label for="landing">Criação de landing page</label>
+                        </div>
+
+                        <div class="checkbox-item">
+                            <input id="app" type="checkbox" name="servicos" value="app">
+                            <label for="app">Criação de aplicativos</label>
+                        </div>
+
+                        <div class="checkbox-item">
+                            <input id="formatacao" type="checkbox" name="servicos" value="formatacao">
+                            <label for="formatacao">Formatação de computador</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="mensagem" title="Conte-me mais sobre seu projeto">Sua mensagem *</label>
+                    <textarea name="mensagem" id="mensagem"
+                        placeholder="Conte-me sobre seu projeto, dúvidas ou o que precisa..." required
+                        title="Campo obrigatório"></textarea>
+                </div>
+
+                <div class="button-group">
+                    <input type="submit" value="Enviar Mensagem" title="Clique para enviar o formulário">
+                    <input type="reset" value="Limpar Campos" title="Clique para limpar todos os campos">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer title="Todos os direitos reservados">
+        &copy; Isabela Aguiar - 2025
+    </footer>
+</body>
+
+</html>
