@@ -81,4 +81,4 @@ Durante este projeto, pratiquei e aprendi:
 
 ---
 
-💜 **Feito com dedicação por Isabela Aguiar | Full Stack Club - 2025**
+💜 **Feito com dedicação por Isabela Aguiar - 2025**
